@@ -4,8 +4,8 @@ import {Link} from 'react-router';
 
 import {submitForm} from '../actions/index';
 
-import FormPageONE from './pageOne';
-import FormPageTWO from './pageTwo';
+import FormPageONE from '../components/pageOne';
+import FormPageTWO from '../components/pageTwo';
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -42,11 +42,11 @@ class SignupForm extends React.Component {
   }
   
   // to debug current form values
-  what(e) {
-    e.preventDefault();
-    
-    console.log(this.props.form);
-  }
+  // what(e) {
+  //   e.preventDefault();
+  //
+  //   console.log(this.props.form);
+  // }
   
   //render sequence of form pages according to this.state.page
   render() {
@@ -54,7 +54,6 @@ class SignupForm extends React.Component {
       <div className="content-wrapper row">
         {this.state.page === 1 && <FormPageONE onSubmit={this.nextPage}/>}
         {this.state.page === 2 && <FormPageTWO onSubmit={this.formComplete} prevPage={this.prevPage}/>}
-        <button className="btn btn-warning" onClick={this.what.bind(this)}>What</button>
       </div>
     )
   }

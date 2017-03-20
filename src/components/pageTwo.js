@@ -1,8 +1,8 @@
 import React from 'react';
 import {Field, reduxForm} from 'redux-form';
 
-import RenderField from '../components/field';
-import validate from '../components/validate';
+import RenderField from './field';
+import validate from './validate';
 
 const FormPageTWO = (props) => {
   const {handleSubmit, prevPage} = props;
