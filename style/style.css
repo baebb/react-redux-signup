@@ -1,0 +1,21 @@
+.content-wrapper {
+  margin-top: 200px;
+}
+
+.box {
+  margin: 15px;
+  padding: 40px 30px;
+  border-radius: 0.25rem;
+  background-color: lightgrey;
+}
+
+.btn-fw {
+  margin-top: 40px;
+  width: 140px;
+}
+
+@media only screen and (max-device-width: 740px) {
+  .content-wrapper {
+    margin-top: 0px;
+  }
+}
