@@ -5,9 +5,9 @@ import RenderField from '../components/field';
 import validate from '../components/validate';
 
 const FormPageTWO = (props) => {
-  const {handleSubmit} = props;
+  const {handleSubmit, prevPage} = props;
   return (
-    <div className="page-two col-xs-12 col-md-4 offset-md-4">
+    <div className="page-two col-12 col-md-4 offset-md-4">
       <div className="box">
         <form onSubmit={handleSubmit}>
           <div className="form-group">
@@ -19,8 +19,13 @@ const FormPageTWO = (props) => {
           <div className="form-group">
             <Field name="phone" type="text" component={RenderField} label="Mobile phone"/>
           </div>
-          <div className="text-center">
-            <button type="submit" className="btn btn-primary btn-fw">Next</button>
+          <div className="row no-gutters">
+            <div className="col-6">
+              <button type="button" className="btn btn-default" onClick={prevPage}>Previous</button>
+            </div>
+            <div className="col-6 text-right">
+              <button type="submit" className="btn btn-primary">Submit</button>
+            </div>
           </div>
         </form>
       </div>

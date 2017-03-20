@@ -50,7 +50,7 @@ class SignupForm extends React.Component {
     return (
       <div className="content-wrapper row">
         {this.state.page === 1 && <FormPageONE onSubmit={this.nextPage}/>}
-        {this.state.page === 2 && <FormPageTWO onSubmit={this.formComplete}/>}
+        {this.state.page === 2 && <FormPageTWO onSubmit={this.formComplete} prevPage={this.prevPage}/>}
         <button className="btn btn-warning" onClick={this.what.bind(this)}>What</button>
       </div>
     )
