@@ -2,16 +2,15 @@ import axios from 'axios';
 
 export const CREATE_POST = 'CREATE_POST';
 
-const ROOT_URL = 'http://jsonplaceholder.typicode.com';
-// const API_KEY = ''; //no api key needed
+const ROOT_URL = 'https://hooks.zapier.com/hooks/catch/2024381/mpxj0a/';
+const postConfig = {headers: {'Content-Type': 'application/x-www-form-urlencoded'}};
 
 export function submitForm(props) {
+  const updatedProps = props;
+  updatedProps.ref_by = 'ross';
   //axios serializes our form object and makes a post request to a dummy URL (as a promise)
-  const request = axios.post(`${ROOT_URL}/posts`, props);
-  
-  // console.log("post form action received!");
-  // console.log(request);
-  
+  const request = axios.post(`${ROOT_URL}`, updatedProps, postConfig);
+
   return {
     type: CREATE_POST,
     payload: request

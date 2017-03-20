@@ -14,8 +14,8 @@ const validate = values => {
   }
   if (!values.phone) {
     errors.phone = 'Required field';
-  } else if (!((values.phone).match(/\d/g).length===10)) {
-    errors.phone = 'Invalid phone number';
+  } else if (!(/\b\d{4}[-\s]?\d{3}[-\s]?\d{3}\b/g).test(values.phone)) {
+    errors.phone = 'Please enter a valid mobile phone number';
   }
   return errors
 };

@@ -33,9 +33,12 @@ class SignupForm extends React.Component {
     this.props.submitForm(form)
     //go to thank you page on response from dummy URL
       .then(() => {
-        console.log('got here too!');
+        console.log('post successful');
         this.context.router.push('thankyou');
-      });
+      })
+      .catch((error) => {
+        console.log('error:', error);
+      })
   }
   
   // to debug current form values
